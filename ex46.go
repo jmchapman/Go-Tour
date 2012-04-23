@@ -7,13 +7,10 @@ import "fmt"
 func fibonacci() func() int {
      x := 0
      y := 1
-     var z int
-     return func() int {
-     	    z = x + y
-	      x = y
-	      	y = z
-		  return z
-		  }
+     return func() int {		
+     	    x, y = y, x + y
+	       return x
+	       }
 }
 
 func main() {
