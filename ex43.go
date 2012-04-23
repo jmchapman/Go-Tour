@@ -1,19 +1,17 @@
 package main
 
 import (
-       "go-tour.googlecode.com/hg/wc"
-       "strings"
+       "fmt"
 )
 
-func WordCount(s string) (m map[string]int) {
-     m = make(map[string]int)
-     f := strings.Fields(s)
-     for _, v := range f {
-     	 m[v]++
+func Sqrt(x float64) (z float64) {
+     z = 10
+     for i := 0; i < 10; i++ {
+     	 z = z - (z * z - x) / (2 * z)
 	 }
-	 return m
+	 return
 }
 
 func main() {
-     wc.Test(WordCount)
+     fmt.Println(Sqrt(2))
 }

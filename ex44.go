@@ -1,18 +1,19 @@
 package main
 
-import "go-tour.googlecode.com/hg/pic"
+import (
+       "tour/wc"
+       "strings"
+)
 
-func Pic(dx, dy int) (p [][]uint8) {
-     p = make([][]uint8,dy)
-     for y := 0; y < dy; y++ {
-     	 p[y] = make([]uint8,dx)
-	      for x := 0; x < dx; x++ {
-	      	    p[y][x] = uint8(x ^ y)
-		    	    }
-			    }
-			    return
+func WordCount(s string) (m map[string]int) {
+     m = make(map[string]int)
+     f := strings.Fields(s)
+     for _, v := range f {
+     	 m[v]++
+	 }
+	 return m
 }
 
 func main() {
-     pic.Show(Pic)
+     wc.Test(WordCount)
 }
